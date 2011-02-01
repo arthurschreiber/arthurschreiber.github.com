@@ -108,7 +108,7 @@ actually needed to give our players smooth animations. Most computer screens hav
 rate of either 50 or 60 fps, so having 200 rendering operations per second is total overkill,
 and brings my CPU usage up to 48%, according to Chrome's Task Manager.
 
-That's why Mozilla introduced window.mozRequestAnimationFrame (which also has a WebKit twin
+That's why Mozilla introduced [window.mozRequestAnimationFrame][mdc:mozRequestAnimationFrame] (which also has a WebKit twin
 called window.webkitRequestAnimationFrame) a way to easily limit the number of
 drawing operations per second to the number of screen refreshes per second.
 (Currently, both mozRequestAnimationFrame as well as webkitRequestAnimationFrame do not
@@ -157,6 +157,7 @@ I'll try to get some more articles about game development using Javascript and H
 and the door over the next weeks, so make sure to check back then!
 
 [mdc:setInterval]: https://developer.mozilla.org/en/DOM/window.setInterval
+[mdc:mozRequestAnimationFrame]: https://developer.mozilla.org/en/DOM/window.mozRequestAnimationFrame
 [example:setInterval]: /examples/game_loop/setInterval.html
 [example:fixed_timestep_setInterval]: /examples/game_loop/fixed_timestep_setInterval.html
 [example:fixed_timestep_optimal]: /examples/game_loop/fixed_timestep_optimal.html
