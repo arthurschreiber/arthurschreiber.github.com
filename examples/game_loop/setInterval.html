@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>setInterval Example</title>
+    <link rel="stylesheet" href="style.css" type="text/css"charset="utf-8" />
+    <script type="text/javascript" charset="utf-8" src="scripts/stats.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/rect.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/game.js"></script>
+  </head>
+  <body>
+    <canvas id="viewport" height="480" width="640"></canvas>
+
+    <script type="text/javascript" charset="utf-8">
+      var stats = new Stats();
+      stats.domElement.style.position = 'absolute';
+      stats.domElement.style.right = '0px';
+      stats.domElement.style.top = '0px';
+      document.body.appendChild(stats.domElement);
+
+      Game.initialize();
+
+      // Add some moving rectangles
+      var i = 400;
+      while (i--) Game.addRect();
+
+      Game.run = function() {
+        setInterval(function() {
+          Game.draw();
+          Game.update();
+
+          // Update fps counter
+          stats.update();
+        }, 1000 / Game.fps);
+      };     
+
+      Game.run();
+    </script>
+  </body>
+</html>

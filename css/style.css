@@ -1,0 +1,158 @@
+body {
+	margin: 0;
+	padding: 0;
+	font: 18px "Lucida Grande", "Helvetica Neue", Verdana, Arial, sans-serif;
+	line-height: 1.7em;
+	color: black;
+	background: white;
+}
+
+#container {
+	width: 42em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header {
+  color: #aaa;
+  line-height: 1.3em;
+  margin-top: 0;
+  margin-bottom: 3em;
+  padding-top: 0.3em;
+}
+
+#header a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+#header a:hover {
+  color: #004491;
+}
+
+#footer {
+  margin-top: 3em;
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.8em;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 100;
+  line-height: 1.2em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.3em;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.3em;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2em;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: normal;
+	border-bottom: 1px solid #ddd;
+}
+
+h1, .post, .link-post {
+  padding-bottom: 8px;
+	margin-bottom: 20px;
+}
+
+
+.link-post h2 {
+  font-size: 1.4em;
+}
+
+code {
+  font-size: 1.1em;
+  -moz-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+}
+
+.highlight {
+  background: yellow;
+  margin-top: -0.3em;
+}
+
+.meta {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9em;
+  color: #999;
+  padding-top: 1em;
+}
+
+.meta a, .content a, .related a {
+  color: #004491;
+  text-decoration: none;
+  border-bottom: 1px dotted #d3dfee;
+}
+
+.meta a {
+  font-weight: normal;
+  
+}
+
+.meta a:hover, .content a:hover, .related a:hover {
+  border-bottom: 1px solid #d3dfee;
+}
+
+.title a {
+  color: black;
+  text-decoration: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: white;
+}
+
+.title a:hover {
+  border: none;
+}
+
+ul.posts {
+  list-style: none;
+  padding-left: 0px;
+}
+
+ul.posts span {
+  color: #999;
+}
+
+pre {
+  font: 0.7em Monaco, Consolas, monospace;
+  line-height: 1.4em;
+  display: block;
+  color: white;
+  background: #222;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  padding: 0.6em 0.8em;
+}
+
+.related {
+  padding-top: 1em;
+  color: #aaa;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9em;
+  line-height: 1.7em;
+}
+
+.related h3 {
+  font-size: 1.2em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.related p {
+  margin-top: 0.4em;
+}
+
+.content p {
+  margin-bottom: 1.3em;
+}

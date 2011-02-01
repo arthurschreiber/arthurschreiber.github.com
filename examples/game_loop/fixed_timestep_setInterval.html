@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>setInterval Example</title>
+    <link rel="stylesheet" href="style.css" type="text/css"charset="utf-8" />
+    <script type="text/javascript" charset="utf-8" src="scripts/stats.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/rect.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/game.js"></script>
+  </head>
+  <body>
+    <canvas id="viewport" height="480" width="640"></canvas>
+
+    <script type="text/javascript" charset="utf-8">
+      var renderStats = new Stats();
+      document.body.appendChild(renderStats.domElement);
+
+      var updateStats = new Stats();
+      document.body.appendChild(updateStats.domElement);
+
+      Game.initialize();
+
+      // Add some moving rectangles
+      var i = 400;
+      while (i--) Game.addRect();
+      
+      Game.run = (function() {
+        var loops = 0, skipTicks = 1000 / Game.fps,
+            maxFrameSkip = 10,
+            nextGameTick = (new Date).getTime();
+
+        return function() {
+          loops = 0;
+
+          while ((new Date).getTime() > nextGameTick) {
+            updateStats.update();
+            Game.update();
+            nextGameTick += skipTicks;
+            loops++;
+          }
+
+          renderStats.update();
+          Game.draw();
+        };
+      })();
+      
+      window.setInterval(Game.run, 0);
+    </script>
+    
+    <a href="#" onclick="Game.addRect()">Add another Entity</a>
+  </body>
+</html>
