@@ -153,8 +153,8 @@ See for yourself [here][example:fixed_timestep_optimal].
 Wow, that's been a long journey we had to undertake to get a game loop that's giving
 us both smooth animations while making sure that our game runs at a constant pace.
 
-I'll try to get some more articles about game development using Javascript and HTML5
-and the door over the next weeks, so make sure to check back then!
+I'll try to post some more articles about game development using Javascript and HTML5
+over the next weeks, so make sure to check back from time to time!
 
 [mdc:setInterval]: https://developer.mozilla.org/en/DOM/window.setInterval
 [mdc:mozRequestAnimationFrame]: https://developer.mozilla.org/en/DOM/window.mozRequestAnimationFrame
