@@ -1,7 +1,6 @@
 ---
 layout: default
-title: "Tom Ward's blog"
-description: "Personal blog of Tom Ward, in which he writes about ruby, rails and web development, as well as other random ephemera"
+title: "Arthur Schreiber's blog"
 ---
 <h1 class="title">Blog Posts</h1>
 <ul class="posts">
