@@ -92,8 +92,8 @@ Game.run = (function() {
 Game._intervalId = setInterval(Game.run, 0);
 {% endhighlight %}
 
-Now, this will give us a game loop that runs Game updates at 50fps, while trying to run
-the drawing code as fast as possible.
+Now, this will give us a game loop that runs 50 Game updates per second, while trying to run
+the drawing code as often as possible.
 
 This gives very, very smooth animations, on my machine, I get around 200 drawing
 operations per second with Google Chrome, while the number of updating operations
@@ -105,10 +105,11 @@ Check out the [example][example:fixed_timestep_setInterval].
 
 But now we're facing another problem: We're burning a lot of CPU cycles, way more than are
 actually needed to give our players smooth animations. Most computer screens have a refresh
-rate of either 50 or 60 fps, so having 200 rendering operations per second is total overkill,
+rate of either 50 or 60 Hz, so having 200 rendering operations per second is total overkill,
 and brings my CPU usage up to 48%, according to Chrome's Task Manager.
 
-That's why Mozilla introduced [window.mozRequestAnimationFrame][mdc:mozRequestAnimationFrame] (which also has a WebKit twin
+That's why Mozilla introduced [window.mozRequestAnimationFrame][mdc:mozRequestAnimationFrame]
+(which also has a WebKit twin
 called window.webkitRequestAnimationFrame) a way to easily limit the number of
 drawing operations per second to the number of screen refreshes per second.
 (Currently, both mozRequestAnimationFrame as well as webkitRequestAnimationFrame do not
