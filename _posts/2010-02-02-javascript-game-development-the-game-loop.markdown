@@ -65,7 +65,8 @@ For some games, this might never be a problem, for others this behaviour can lea
 to jerkiness. Also, if you want to add a multiplayer component, you want to make
 sure that your logic runs with the same speed on all your clients.
 
-This can be achieved using a so called "game loop with fixed time steps".
+This can be achieved using a so called
+"[game loop with fixed time steps][flipcode:fixed_timestep]".
 Basically, we try to run the logic a fixed amount of times per second, while
 trying to draw as many frames per second as possible.
 
@@ -159,6 +160,7 @@ over the next weeks, so make sure to check back from time to time!
 
 [mdc:setInterval]: https://developer.mozilla.org/en/DOM/window.setInterval
 [mdc:mozRequestAnimationFrame]: https://developer.mozilla.org/en/DOM/window.mozRequestAnimationFrame
+[flipcode:fixed_timestep]: http://www.flipcode.com/archives/Main_Loop_with_Fixed_Time_Steps.shtml
 [example:setInterval]: /examples/game_loop/setInterval.html
 [example:fixed_timestep_setInterval]: /examples/game_loop/fixed_timestep_setInterval.html
 [example:fixed_timestep_optimal]: /examples/game_loop/fixed_timestep_optimal.html
