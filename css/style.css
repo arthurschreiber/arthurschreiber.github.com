@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	font: 18px "Lucida Grande", "Helvetica Neue", Verdana, Arial, sans-serif;
+	font: 16px "Lucida Grande", "Helvetica Neue", Verdana, Arial, sans-serif;
 	line-height: 1.7em;
 	color: black;
 	background: white;
@@ -17,7 +17,6 @@ body {
   color: #aaa;
   line-height: 1.3em;
   margin-top: 0;
-  margin-bottom: 3em;
   padding-top: 0.3em;
 }
 
@@ -43,7 +42,6 @@ h2 {
   border-bottom: 1px solid #ddd;
   padding-bottom: 0.2em;
   margin-bottom: -0.3em;
-  margin-top: 0;
 }
 
 h3 {
