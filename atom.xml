@@ -6,7 +6,7 @@ layout: nil
  <title>NoKarma.org</title>
  <link href="http://nokarma.org/atom.xml" rel="self"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://http://nokarma.org/</id>
+ <id>http://nokarma.org/</id>
  <author>
    <name>Arthur Schreiber</name>
    <email>arthur@nokarma.org</email>
