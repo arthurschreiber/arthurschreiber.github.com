@@ -1,0 +1,26 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>NoKarma.org</title>
+ <link href="http://nokarma.org/atom.xml" rel="self"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://http://nokarma.org/</id>
+ <author>
+   <name>Arthur Schreiber</name>
+   <email>arthur@nokarma.org</email>
+ </author>
+ {% for post in site.posts limit:10 %}
+ <entry>
+   <id>http://nokarma.org{{ post.id }}</id>
+   <link href="http://nokarma.org{{ post.url }}"/>
+   <title>{{ post.title }}</title>
+   <author>
+     <name>Arthur Schreiber</name>
+     <email>arthur@nokarma.org</email>
+   </author>
+   <content type="html">{{ post.content | xml_escape }}</content>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+ </entry>
+</feed>
