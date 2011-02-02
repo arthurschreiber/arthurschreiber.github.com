@@ -23,4 +23,5 @@ layout: nil
    <content type="html">{{ post.content | xml_escape }}</content>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
  </entry>
+ {% endfor %}
 </feed>
