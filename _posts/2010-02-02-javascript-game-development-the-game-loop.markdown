@@ -202,13 +202,10 @@ Game.run = (function() {
     loops = 0;
 
     while ((new Date).getTime() > nextGameTick) {
-      updateStats.update();
       Game.update();
       nextGameTick += skipTicks;
       loops++;
     }
-
-    renderStats.update();
 
     if (!loops) {
       Game.draw((nextGameTick - (new Date).getTime()) / skipTicks);
