@@ -214,12 +214,11 @@ Game.run = (function() {
     }
   };
 })();
+{% endhighlight %}
 
 Now, if you're going to do interpolation, you should also lower the number
 of game updates you run, down to maybe 25 or 30 updates per second (but don't
 forget to update the movement speed of your objects accordingly).
-
-{% endhighlight %}
 
 [mdc:setInterval]: https://developer.mozilla.org/en/DOM/window.setInterval
 [mdc:mozRequestAnimationFrame]: https://developer.mozilla.org/en/DOM/window.mozRequestAnimationFrame
