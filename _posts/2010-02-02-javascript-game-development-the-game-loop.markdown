@@ -158,6 +158,72 @@ us both smooth animations while making sure that our game runs at a constant pac
 I'll try to post some more articles about game development using Javascript and HTML5
 over the next weeks, so make sure to check back from time to time!
 
+## Edit - February 3rd, 2010
+
+As was pointed out in the comments, there is no benefit in running more drawing
+operations than update operations (except for maybe benchmarking), so you have
+to either interpolate or skip drawing if there were absolutely no game updates.
+
+Skipping drawing operations is actually really easy to achieve, just put a small
+condition around the call to Game.draw:
+
+{% highlight javascript %}
+if (loops) Game.draw();
+{% endhighlight %}
+
+This makes sure that we only draw the game if we have run at least one updating operation.
+
+Interpolation is a bit more difficult, as you have to make all drawing operations aware
+of the interpolation, and it will make your game drawing code considerably more complicated.
+
+Here is the code for an interpolating game loop:
+
+{% highlight javascript %}
+// Updated drawing code for our objects
+Rect.prototype.draw = function(context, interpolation) {
+  context.fillRect(this.x, this.y + this.velocity * interpolation, 30, 30);
+};
+
+Game.draw = function(interpolation) {
+  this.context.clearRect(0, 0, 640, 480);
+
+  for (var i=0; i < this.entities.length; i++) {
+    this.entities[i].draw(this.context, interpolation);
+  }
+};
+
+Game.run = (function() {
+  var loops = 0, skipTicks = 1000 / Game.fps,
+      maxFrameSkip = 10,
+      nextGameTick = (new Date).getTime(),
+      lastGameTick;
+
+  return function() {
+    loops = 0;
+
+    while ((new Date).getTime() > nextGameTick) {
+      updateStats.update();
+      Game.update();
+      nextGameTick += skipTicks;
+      loops++;
+    }
+
+    renderStats.update();
+
+    if (!loops) {
+      Game.draw((nextGameTick - (new Date).getTime()) / skipTicks);
+    } else {
+      Game.draw(0);
+    }
+  };
+})();
+
+Now, if you're going to do interpolation, you should also lower the number
+of game updates you run, down to maybe 25 or 30 updates per second (but don't
+forget to update the movement speed of your objects accordingly).
+
+{% endhighlight %}
+
 [mdc:setInterval]: https://developer.mozilla.org/en/DOM/window.setInterval
 [mdc:mozRequestAnimationFrame]: https://developer.mozilla.org/en/DOM/window.mozRequestAnimationFrame
 [flipcode:fixed_timestep]: http://www.flipcode.com/archives/Main_Loop_with_Fixed_Time_Steps.shtml
