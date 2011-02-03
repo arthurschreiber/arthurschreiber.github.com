@@ -11,7 +11,7 @@ running a game's logic, and executing it's drawing operations.
 A very basic game loop would look something like this in JavaScript
 (this does not work in Browsers!):
 
-{% highlight javascript  %}
+{% highlight javascript %}
 var Game = { };
 
 Game.draw = function() { ... draw entities here ... };
