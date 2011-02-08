@@ -6,7 +6,11 @@ layout: nil
   {% for post in site.posts %}
   <url>
     <loc>http://nokarma.org{{ post.url }}</loc>
-    <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
+    {% if post.lastmod %}
+    <lastmod>{{ post.lastmod | date: "%Y-%m-%d" }}</lastmod>
+    {% else %}
+    <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>    
+    {% endif %}
   </url>
   {% endfor %}
   <url>

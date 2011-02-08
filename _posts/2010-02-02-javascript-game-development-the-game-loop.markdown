@@ -18,6 +18,7 @@ keywords:
   - setTimeout
   - timestep
   - webkit
+lastmod: 2011-02-03
 ---
 
 One of the most important parts of a game engine is the so called "game loop". It
