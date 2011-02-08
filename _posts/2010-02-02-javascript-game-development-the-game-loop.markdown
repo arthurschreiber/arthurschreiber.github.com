@@ -23,7 +23,7 @@ keywords:
 
 One of the most important parts of a game engine is the so called "game loop". It
 is the central piece of the game's engine and is responsible for trying to balance
-running a game's logic, and executing it's drawing operations.
+running a game's logic, and executing its drawing operations.
 
 A very basic game loop would look something like this in JavaScript
 (this does not work in Browsers!):
