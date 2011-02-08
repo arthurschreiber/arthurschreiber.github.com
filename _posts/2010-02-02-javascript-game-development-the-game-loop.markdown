@@ -3,6 +3,22 @@ layout: post
 title: Javascript Game Development - The Game Loop
 categories: [javascript]
 description: Different techniques to create a game loop in JavaScript.
+keywords:
+  - webkitrequestanimationframe
+  - mozrequestanimationframe
+  - javascript
+  - html
+  - html5
+  - game
+  - main
+  - engine
+  - loop
+  - development
+  - interpolation
+  - setInterval
+  - setTimeout
+  - timestep
+  - webkit
 ---
 
 One of the most important parts of a game engine is the so called "game loop". It
