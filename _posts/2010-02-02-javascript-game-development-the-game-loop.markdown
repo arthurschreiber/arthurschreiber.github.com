@@ -2,6 +2,7 @@
 layout: post
 title: Javascript Game Development - The Game Loop
 categories: [javascript]
+description: Different techniques to create a game loop in JavaScript.
 ---
 
 One of the most important parts of a game engine is the so called "game loop". It
