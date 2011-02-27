@@ -13,9 +13,9 @@ keywords:
   - development
 ---
 
-Now that we have our basic game loop layed out, we can focus on implementing other aspects
-of our javascript based game. What I want to show in this post is how you process keyboard
-input.
+Now that we have our basic [game loop](/2010/02/02/javascript-game-development-the-game-loop/)
+layed out, we can focus on implementing other aspects of our javascript based game. What I
+want to show in this post is how you process keyboard input.
 
 ## Keyboard Events
 
