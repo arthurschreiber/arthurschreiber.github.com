@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Player Movement using onkeydown/onkeyup (First version)</title>
+    <style type="text/css" media="screen">
+      canvas { border: 1px solid; }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+    var Game = {
+      fps: 60,
+      width: 640,
+      height: 480
+    };
+
+    Game._onEachFrame = (function() {
+      var requestAnimationFrame = window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+      if (requestAnimationFrame) {
+       return function(cb) {
+          var _cb = function() { cb(); requestAnimationFrame(_cb); }
+          _cb();
+        };
+      } else {
+        return function(cb) {
+          setInterval(cb, 1000 / Game.fps);
+        }
+      }
+    })();
+    
+    Game.start = function() {
+      Game.canvas = document.createElement("canvas");
+      Game.canvas.width = Game.width;
+      Game.canvas.height = Game.height;
+
+      Game.context = Game.canvas.getContext("2d");
+
+      document.body.appendChild(Game.canvas);
+
+      Game.player = new Player();
+
+      Game._onEachFrame(Game.run);
+    };
+    
+    Game.run = (function() {
+      var loops = 0, skipTicks = 1000 / Game.fps,
+          maxFrameSkip = 10,
+          nextGameTick = (new Date).getTime(),
+          lastGameTick;
+
+      return function() {
+        loops = 0;
+
+        while ((new Date).getTime() > nextGameTick) {
+          Game.update();
+          nextGameTick += skipTicks;
+          loops++;
+        }
+
+        if (loops) Game.draw();
+      }
+    })();
+    
+    Game.draw = function() {
+      Game.context.clearRect(0, 0, Game.width, Game.height);
+      Game.player.draw(Game.context);
+    };
+    
+    Game.update = function() { };
+
+    function Player() {
+      this.x = 0;
+      this.y = 0;
+    }
+
+    Player.prototype.draw = function(context) {
+      context.fillRect(this.x, this.y, 32, 32);
+    };
+
+    Player.prototype.moveLeft = function() {
+      this.x -= 1;
+    };
+
+    Player.prototype.moveRight = function() {
+      this.x += 1;
+    };
+
+    Player.prototype.moveUp = function() {
+      this.y -= 1;
+    };
+
+    Player.prototype.moveDown = function() {
+      this.y += 1;
+    };
+    
+    
+    window.addEventListener('keydown', function(event) {
+      switch (event.keyCode) {
+        case 37: // Left
+          Game.player.moveLeft();
+        break;
+
+        case 38: // Up
+          Game.player.moveUp();
+        break;
+
+        case 39: // Right
+          Game.player.moveRight();
+        break;
+
+        case 40: // Down
+          Game.player.moveDown();
+        break;
+      }
+    }, false);
+    </script>
+  </head>
+  <body onload="Game.start()">
+  </body>
+</html>
