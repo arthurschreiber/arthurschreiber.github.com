@@ -19,7 +19,7 @@ keywords:
   - timestep
   - webkit
 lastmod: 2011-02-03
-disqus_id: /2010/02/27/javascript-game-development-the-game-loop
+disqus_id: /2010/02/02/javascript-game-development-the-game-loop
 ---
 
 One of the most important parts of a game engine is the so called "game loop". It
