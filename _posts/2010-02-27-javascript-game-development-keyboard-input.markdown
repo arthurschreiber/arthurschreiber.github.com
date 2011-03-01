@@ -147,10 +147,10 @@ key is currently pressed down or not. Now we add the following function to our P
 
 {% highlight javascript %}
 Player.prototype.update = function() {
-  if (Key.isDown(Key.UP)) Game.player.moveUp();
-  if (Key.isDown(Key.LEFT)) Game.player.moveLeft();
-  if (Key.isDown(Key.DOWN)) Game.player.moveDown();
-  if (Key.isDown(Key.RIGHT)) Game.player.moveRight();
+  if (Key.isDown(Key.UP)) this.moveUp();
+  if (Key.isDown(Key.LEFT)) this.moveLeft();
+  if (Key.isDown(Key.DOWN)) this.moveDown();
+  if (Key.isDown(Key.RIGHT)) this.moveRight();
 };
 {% endhighlight %}
 
