@@ -20,14 +20,8 @@
       var disqus_shortname = 'nokarmaorg'; // required: replace example with your forum shortname
 
       // The following are highly recommended additional parameters. Remove the slashes in front to use.
-      {% if page.disqus_id %}
-      var disqus_identifier = '{{ page.disqus_id }}';
-      var disqus_url = 'http://nokarma.org/{{ page.disqus_id }}';
-      {% endif %}
-      {% unless page.disqus_id %}
       var disqus_identifier = '{{ page.url }}';
       var disqus_url = 'http://nokarma.org/{{ page.url }}';
-      {% endunless %}
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
