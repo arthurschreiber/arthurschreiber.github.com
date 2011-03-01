@@ -101,7 +101,7 @@
     };
     
     Game.update = function() {
-      Player.prototype.update();
+      Game.player.update();
     };
 
     function Player() {
@@ -130,10 +130,10 @@
     };
     
     Player.prototype.update = function() {
-      if (Key.isDown(Key.UP)) Game.player.moveUp();
-      if (Key.isDown(Key.LEFT)) Game.player.moveLeft();
-      if (Key.isDown(Key.DOWN)) Game.player.moveDown();
-      if (Key.isDown(Key.RIGHT)) Game.player.moveRight();
+      if (Key.isDown(Key.UP)) this.moveUp();
+      if (Key.isDown(Key.LEFT)) this.moveLeft();
+      if (Key.isDown(Key.DOWN)) this.moveDown();
+      if (Key.isDown(Key.RIGHT)) this.moveRight();
     };
     </script>
   </head>
