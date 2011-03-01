@@ -1,6 +1,6 @@
---- 
-permalink: /:year/:month/:day/:title
-maruku: 
+---
+permalink: /:year/:month/:day/:title/index.html
+maruku:
   png_dir: images/latex
   png_url: /images/latex
   use_tex: false
