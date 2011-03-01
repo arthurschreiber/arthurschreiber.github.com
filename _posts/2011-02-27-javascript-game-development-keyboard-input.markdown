@@ -11,7 +11,7 @@ keywords:
   - game
   - engine
   - development
-disqus_id: /2010/02/27/javascript-game-development-keyboard-input/
+disqus_id: /2010/02/27/javascript-game-development-keyboard-input
 ---
 
 Now that we have our basic [game loop](/2010/02/02/javascript-game-development-the-game-loop/)
